@@ -7,7 +7,7 @@ public class Zad_2 {
         //Zastosowanie typów prostych uniemożliwiłoby otrzymanie tak dużej wartości silni.
         //jeśli zawali ci kompa to zmniejsz n
 
-        int n = 10000000;
+        int n = 1000000;
         BigInteger silnia = BigInteger.ONE;
         long startTime = System.nanoTime();
         for (int i = 1; i < n; i++) {
