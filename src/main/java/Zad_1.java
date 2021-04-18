@@ -20,6 +20,8 @@ public class Zad_1 {
         //Najszybciej utworzyła się lista za pomocą tablicy, później za pomocą ArrayListy
         // , która jest dynamiczną tablicą. Ta, która miała podany rozmiar na początku utworzyła się szyciej.
         //Najdłuzej tworzyła się lista za pomocą LinkedListy, ponieważ to tablica dwukierunkowa.
+
+        //jeśli zawali ci kompa to zmniejsz n, obliczenia powinny się wykonywać max kilkanaście sekund
     }
 
     public static long a(int n) {
