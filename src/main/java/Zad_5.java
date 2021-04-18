@@ -26,42 +26,57 @@ public class Zad_5 {
 
     }
 
-    public static void mergeSort(int[] insert, int n) {
-        n = insert.length;
-        int mid = n / 2;
-        int[] left = new int[mid];
-        int[] right = new int[n - mid];
+    public static void merge(int array[], int p, int q, int r) {
 
-        for (int i = 0; i < mid; i++) {
-            left[i] = insert[i];
+        int n1 = q - p + 1;
+        int n2 = r - q;
+
+        int L[] = new int[n1];
+        int M[] = new int[n2];
+
+        for (int i = 0; i < n1; i++)
+            L[i] = array[p + i];
+        for (int j = 0; j < n2; j++)
+            M[j] = array[q + 1 + j];
+
+        int i, j, k;
+        i = 0;
+        j = 0;
+        k = p;
+
+        while (i < n1 && j < n2) {
+            if (L[i] <= M[j]) {
+                array[k] = L[i];
+                i++;
+            } else {
+                array[k] = M[j];
+                j++;
+            }
+            k++;
         }
 
-        for (int i = mid; i < n; i++) {
-            right[i - mid] = insert[i];
+        while (i < n1) {
+            array[k] = L[i];
+            i++;
+            k++;
         }
 
-        mergeSort(left, mid);
-        mergeSort(right, n - mid);
-
-        merge(insert, left, right, mid, n - mid);
-
-        //System.out.println(Arrays.toString(insert));
+        while (j < n2) {
+            array[k] = M[j];
+            j++;
+            k++;
+        }
     }
 
-    public static void merge(int[] insert, int[] l, int[] r, int left, int rigth) {
-        int i = 0, j = 0, k = 0;
-        while (i < left && j < rigth) {
-            if (l[i] <= r[j]) {
-                insert[k++] = l[i++];
-            } else {
-                insert[k++] = r[j++];
-            }
-        }
-        while (i < left) {
-            insert[k++] = l[i++];
-        }
-        while (j < rigth) {
-            insert[k++] = r[j++];
+    public static void mergeSort(int array[], int left, int right) {
+        if (left < right) {
+
+            int mid = (left + right) / 2;
+
+            mergeSort(array, left, mid);
+            mergeSort(array, mid + 1, right);
+
+            merge(array, left, mid, right);
         }
     }
 
@@ -74,7 +89,7 @@ public class Zad_5 {
         System.out.println("Test 1");
         System.out.println("Sortowanie przez wstawianie: " + insertionSort(test1) + " nanosekund");
         long startTime = System.nanoTime();
-        //mergeSort(test1, test1.length);
+        mergeSort(test1, test1.length, test1.length);
         long estimatedTime = System.nanoTime() - startTime;
         System.out.println("Sortowanie przez scalanie: " + estimatedTime + " nanosekund");
     }
@@ -88,7 +103,7 @@ public class Zad_5 {
         System.out.println("Test 2");
         System.out.println("Sortowanie przez wstawianie: " + insertionSort(test2) + " nanosekund");
         long startTime = System.nanoTime();
-       // mergeSort(test2, test2.length);
+        mergeSort(test2, test2.length, test2.length);
         long estimatedTime = System.nanoTime() - startTime;
         System.out.println("Sortowanie przez scalanie: " + estimatedTime + " nanosekund");
     }
@@ -103,7 +118,7 @@ public class Zad_5 {
         System.out.println("Test 3");
         System.out.println("Sortowanie przez wstawianie: " + insertionSort(test3) + " nanosekund");
         long startTime = System.nanoTime();
-       // mergeSort(test3, test3.length);
+        mergeSort(test3, test3.length, test3.length);
         long estimatedTime = System.nanoTime() - startTime;
         System.out.println("Sortowanie przez scalanie: " + estimatedTime + " nanosekund");
     }
