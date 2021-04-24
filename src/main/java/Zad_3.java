@@ -20,7 +20,7 @@ public class Zad_3 {
 
     }
 
-    public List<String> readFile(Path path) {
+    protected List<String> readFile(Path path) {
         Stream<String> lines;
         List<String> words = null;
         try {
@@ -39,7 +39,7 @@ public class Zad_3 {
         return words;
     }
 
-    public Map<String, Integer> countWords(List<String> words) {
+    protected Map<String, Integer> countWords(List<String> words) {
         Map<String, Integer> uniqueWords = new HashMap<>();
 
         for (int i = 0; i < words.size(); i++) {

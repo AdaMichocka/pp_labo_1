@@ -5,16 +5,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Zad_4 {
-
-    Zad_3 zad_3 = new Zad_3();
+public class Zad_4 extends Zad_3{
 
     public void zad4() {
         Path path = Paths.get("D:\\IdeaProjects\\pp_labo_1\\src\\main\\resources\\mackbeth.txt");
 
-        List<String> words = zad_3.readFile(path);
+        List<String> words = readFile(path);
 
-        Map<String, Integer> uniqueWords = zad_3.countWords(words);
+        Map<String, Integer> uniqueWords = countWords(words);
 
         List<Map.Entry<String, Integer>> result = uniqueWords.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
