@@ -14,7 +14,7 @@ public class Main {
         boolean war = false;
         while (!war) {
             System.out.println("------------------------------------------");
-            System.out.println("Wpisz numer zadania");
+            System.out.println("Wpisz numer zadania 1-5");
             System.out.println("(Żeby zakończyć program wpisz 0)");
             System.out.println("------------------------------------------");
             System.out.println();

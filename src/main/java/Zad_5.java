@@ -82,7 +82,7 @@ public class Zad_5 {
     }
 
     public static void test1() {
-        int[] test1 = new int[100];
+        int[] test1 = new int[1000000];
         for (int i = test1.length - 1; i >= 0; i--) {
             test1[i] = i;
         }
@@ -96,7 +96,7 @@ public class Zad_5 {
     }
 
     public static void test2() {
-        int[] test2 = new int[100];
+        int[] test2 = new int[1000000];
         for (int i = 0; i < test2.length; i++) {
             test2[i] = i;
         }
@@ -110,7 +110,7 @@ public class Zad_5 {
     }
 
     public static void test3() {
-        int[] test3 = new int[100];
+        int[] test3 = new int[1000000];
         for (int i = 0; i < test3.length; i++) {
             test3[i] = (int) (Math.random() * (1000) + 1);
 
