@@ -1,11 +1,12 @@
 import java.util.Arrays;
 
 public class Zad_5 {
-    public static void main(String[] args) {
+    public void zad5() {
         test1();
+        System.out.println();
         test2();
+        System.out.println();
         test3();
-
     }
 
     public static long insertionSort(int[] insert) {
@@ -86,7 +87,7 @@ public class Zad_5 {
             test1[i] = i;
         }
 
-        System.out.println("Test 1");
+        System.out.println("Test 1: tablica posortowana malejąco (sortujemy rosnąco)");
         System.out.println("Sortowanie przez wstawianie: " + insertionSort(test1) + " nanosekund");
         long startTime = System.nanoTime();
         mergeSort(test1, test1.length, test1.length);
@@ -100,7 +101,7 @@ public class Zad_5 {
             test2[i] = i;
         }
 
-        System.out.println("Test 2");
+        System.out.println("Test 2: tablica posortowana rosnąco (sortujemy rosnąco)");
         System.out.println("Sortowanie przez wstawianie: " + insertionSort(test2) + " nanosekund");
         long startTime = System.nanoTime();
         mergeSort(test2, test2.length, test2.length);
@@ -115,7 +116,7 @@ public class Zad_5 {
 
         }
 
-        System.out.println("Test 3");
+        System.out.println("Test 3: tablica wypełniona losowymi danymi (sortujemy rosnąco)");
         System.out.println("Sortowanie przez wstawianie: " + insertionSort(test3) + " nanosekund");
         long startTime = System.nanoTime();
         mergeSort(test3, test3.length, test3.length);

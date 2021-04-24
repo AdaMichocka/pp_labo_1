@@ -2,13 +2,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Zad_1 {
-    //czas tworzenia
-    //tablic
-    //kolekcji ArrayList
-    //ArrayList z podaniem max rozmiaru
-    //LinkedList
 
-    public static void main(String[] args) {
+    public void zad1() {
         int n = Integer.MAX_VALUE / 20;
         System.out.println("Rozmiar listy: " + n);
         System.out.println("a) tablica: " + a(n) + " nanosekund");
@@ -16,15 +11,13 @@ public class Zad_1 {
         System.out.println("c) ArrayList z rozm " + c(n) + " nanosekund");
         System.out.println("d) LinkedList: " + d(n) + " nanosekund");
 
-
         //Najszybciej utworzyła się lista za pomocą tablicy, później za pomocą ArrayListy
         // , która jest dynamiczną tablicą. Ta, która miała podany rozmiar na początku utworzyła się szyciej.
         //Najdłuzej tworzyła się lista za pomocą LinkedListy, ponieważ to tablica dwukierunkowa.
 
-        //jeśli zawali ci kompa to zmniejsz n, obliczenia powinny się wykonywać max kilkanaście sekund
     }
 
-    public static long a(int n) {
+    private long a(int n) {
         long startTime = System.nanoTime();
         int[] array = new int[n];
         for (int i = 0; i < n; i++) {
@@ -33,7 +26,7 @@ public class Zad_1 {
         return System.nanoTime() - startTime;
     }
 
-    public static long b(int n) {
+    private long b(int n) {
         long startTime = System.nanoTime();
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
@@ -42,7 +35,7 @@ public class Zad_1 {
         return System.nanoTime() - startTime;
     }
 
-    public static long c(int n) {
+    private long c(int n) {
         long startTime = System.nanoTime();
         ArrayList<Integer> arrayList = new ArrayList<>(n);
         for (int i = 0; i < n; i++) {
@@ -51,7 +44,7 @@ public class Zad_1 {
         return System.nanoTime() - startTime;
     }
 
-    public static long d(int n) {
+    private long d(int n) {
         long startTime = System.nanoTime();
         LinkedList<Integer> linkedList = new LinkedList<>();
         for (int i = 0; i < n; i++) {
